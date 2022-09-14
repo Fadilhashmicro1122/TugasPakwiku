@@ -1,3 +1,3 @@
-Menambahkan categori Keuangan 
-menambahkan laporan laba 
-menambahkan beberaoa fitur di penjuala 
+Menambahkan categori Keuangan <br>
+menambahkan laporan laba <br>
+menambahkan beberaoa fitur di penjualan
