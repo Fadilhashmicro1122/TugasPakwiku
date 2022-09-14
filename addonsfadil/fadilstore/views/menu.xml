@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="fadilstore_menu_root"
+              name="Fadil Store"
+              sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="fadilstore_barang_menu_categ"
+              name="Barang"
+              parent="fadilstore_menu_root"
+              sequence="10"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_pegawai_menu_categ" 
+              name="Pegawai" 
+              parent="fadilstore_menu_root" 
+              sequence="20"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_transaksi_menu_categ" 
+              name="Transaksi" 
+              parent="fadilstore_menu_root" 
+              sequence="42"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_laba_menu_categ" 
+              name="Laporan Keuangan" 
+              parent="fadilstore_menu_root" 
+              sequence="49"/>
+
+</odoo>

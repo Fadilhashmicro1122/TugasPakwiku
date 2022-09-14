@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_laporanlaba_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2><b>FAKTUR KEUANGAN</b></h2>
+                    
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>Source Document</span>
+                                </th>
+                                <th>
+                                    <span>Customer</span>
+                                </th>
+                                 <th>
+                                    <span>Tanggal Transaksi</span>
+                                </th>
+                                <th>
+                                    <span>Subtotal Laba</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        
+                        <t t-foreach="docs" t-as="d">
+                           <tr>
+                                <td> 
+                                   <span class="col-3" t-field="d.source_document"/>
+                                </td>
+                                <td> 
+                                   <span class="col-3" t-field="d.partner_id"/>
+                                </td>
+                                <td> 
+                                   <span class="col-3" t-field="d.tgl_laporanlaba"/>
+                                </td>
+                                <td> 
+                                    <span class="col-3" t-field="d.laporantotal_laba"/>
+                                </td>
+                           </tr>
+                        </t> 
+                    </table>   
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- fadilstore.kelompokbarang tree view -->
+    <record id="fadilstore_kelompokbarang_view_tree" model="ir.ui.view">
+        <field name="name">fadilstore.kelompokbarang.view.tree</field>
+        <field name="model">fadilstore.kelompokbarang</field>
+        <field name="arch" type="xml">
+            <tree>
+              <field name="nama"/>
+              <field name="kode_kelompok"/>
+              <field name="kode_rak"/>  
+              <field name="jml_item"/> 
+              <field name="daftar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- fadilstore.kelompokbarang form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">fadilstore.kelompokbarang.view.form</field>
+        <field name="model">fadilstore.kelompokbarang</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Barang">
+                <sheet>
+                    <group name="kelompok" string="Letak Kelompok">
+                        <field name="nama" 
+                        required="1"
+                        />
+                        <field name="kode_kelompok"/>
+                        <field name="jml_item"/> 
+                    </group>
+
+                    <group name="rak" string="Letak Rak">
+                        <field name="kode_rak"/>  
+                        <field name="barang_ids"/>  
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- fadilstore.kelompokbarang action window -->
+    <record id="fadilstore_kelompokbarang_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fadilstore.kelompokbarang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_kelompokbarang_menu_act"
+              name="Kelompok Barang"
+              parent="fadilstore_barang_menu_categ"
+              action="fadilstore_kelompokbarang_action"
+              sequence="10"/>
+
+</odoo>

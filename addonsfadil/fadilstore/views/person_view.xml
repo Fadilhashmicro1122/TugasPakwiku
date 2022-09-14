@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- fadilstore.person tree view -->
+    <record id="fadilstore_person_view_tree" model="ir.ui.view">
+        <field name="name">fadilstore.person.view.tree</field>
+        <field name="model">fadilstore.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="tgl_lahir"/>  
+            </tree>
+        </field>
+    </record>
+
+    <!-- fadilstore.person form view -->
+    <record id="fadilstore.person_view_form" model="ir.ui.view">
+        <field name="name">fadilstore.person.view.form</field>
+        <field name="model">fadilstore.person</field>
+        <field name="arch" type="xml">
+            <form string="Biodata">
+                <sheet>
+                   <group name="name" string="Nama">
+                        <field name="name"/>
+                   </group>
+                   <group name="data" string="Data">
+                        <field name="alamat"/>
+                        <field name="tgl_lahir"/>
+                   </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

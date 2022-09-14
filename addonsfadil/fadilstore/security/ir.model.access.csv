@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fadilstore_kelompokbarang,access.fadilstore.kelompokbarang,model_fadilstore_kelompokbarang,,1,1,1,1
+access_fadilstore_barang,access.fadilstore.barang,model_fadilstore_barang,,1,1,1,1
+access_fadilstore_person,access.fadilstore.person,model_fadilstore_person,,1,1,1,1
+access_fadilstore_kasir,access.fadilstore.kasir,model_fadilstore_kasir,,1,1,1,1
+access_fadilstore_cleaningservice,access.fadilstore.cleaningservice,model_fadilstore_cleaningservice,,1,1,1,1
+access_fadilstore_suplier,access.fadilstore.suplier,model_fadilstore_suplier,,1,1,1,1
+access_fadilstore_penjualan,access.fadilstore.penjualan,model_fadilstore_penjualan,,1,1,1,1
+access_fadilstore_detailpenjualan,access.fadilstore.detailpenjualan,model_fadilstore_detailpenjualan,,1,1,1,1
+access_fadilstore_barangdatang,access.fadilstore.barangdatang,model_fadilstore_barangdatang,,1,1,1,1
+access_fadilstore_laporanlaba,access.fadilstore.laporanlaba,model_fadilstore_laporanlaba,,1,1,1,1
+access_fadilstore_laporanlaba_line,access.fadilstore.laporanlaba.line,model_fadilstore_laporanlaba_line,,1,1,1,1

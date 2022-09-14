@@ -1,0 +1,47 @@
+<odoo>
+
+   <record id="report_suplier_xlsx" model="ir.actions.report">
+        <field name="name">Suplier Excel</field>
+        <field name="model">fadilstore.suplier</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">fadilstore.report_suplier_xlsx</field>
+        <field name="report_file">fadilstore.report_suplier_xlsx</field>
+        <field name="binding_model_id" ref="model_fadilstore_suplier"/>
+        <field name="binding_type">report</field>
+    </record>
+
+     <record id="report_penjualan_xlsx" model="ir.actions.report">
+        <field name="name">Penjualan Excel</field>
+        <field name="model">fadilstore.penjualan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">fadilstore.report_penjualan_xlsx</field>
+        <field name="report_file">fadilstore.report_penjualan_xlsx</field>
+        <field name="binding_model_id" ref="model_fadilstore_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+     <record id="report_penjualan_pdf" model="ir.actions.report">
+        <field name="name">Print Faktur</field>
+        <field name="model">fadilstore.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fadilstore.report_penjualan_pdf</field>
+        <field name="report_file">fadilstore.report_penjualan_pdf</field>
+        <field name="binding_model_id" ref="model_fadilstore_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_laba_pdf" model="ir.actions.report">
+        <field name="name">Print Faktur Keuangan</field>
+        <field name="model">fadilstore.laporanlaba</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fadilstore.report_laporanlaba_pdf</field>
+        <field name="report_file">fadilstore.report_laporanlaba_pdf</field>
+        <field name="binding_model_id" ref="model_fadilstore_laporanlaba"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    
+
+    
+ 
+</odoo>

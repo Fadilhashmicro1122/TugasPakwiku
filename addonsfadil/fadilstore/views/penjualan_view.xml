@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- fadilstore.penjualan tree view -->
+    <record id="fadilstore_penjualan_view_tree" model="ir.ui.view">
+        <field name="name">fadilstore.penjualan.view.tree</field>
+        <field name="model">fadilstore.penjualan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nama_pembeli" invisible='1'/>
+                <field name="tgl_penjualan"/>
+                <field name="total_bayar" sum="Total"/>
+                <field name="laba_bersih" sum="Total"/>
+                <field name="state"/>
+            </tree>     
+        </field>
+    </record>
+
+    <!-- fadilstore.penjualan form view -->
+    <record id="fadilstore_penjualan_view_form" model="ir.ui.view">
+        <field name="name">fadilstore.penjualan.view.form</field>
+        <field name="model">fadilstore.penjualan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft" confirm="Apakah Anda Yakin?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm" />
+                </header>
+                <sheet>
+                    <group>
+                       <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required='0'/>
+                        <field name="nama_pembeli" invisible='1'/>
+                        <field name="tgl_penjualan" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="total_bayar" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="uang_masuk" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="uang_kembalian" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    </group>
+
+                    <group name="daftarbarang" string="Daftar Barang">
+                        <field name="detailpenjualan_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                            <tree editable='bottom'>
+                                <field name="barang_id"/>
+                                <field name="qty"/>
+                                <field name="harga_satuan"/>
+                                <field name="subtotal_hargajual" sum="Total"/>
+                                <field name="harga_modal" invisible="1"/>
+                                <field name="subtotal_hargamodal" invisible="1"/>
+                                <field name="laba" sum="Total" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- fadilstore.penjualan action window -->
+    <record id="fadilstore_penjualan_action" model="ir.actions.act_window">
+        <field name="name">Penjualan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fadilstore.penjualan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_penjualan_menu_act" 
+              name="Penjualan" 
+              parent="fadilstore_transaksi_menu_categ" 
+              action="fadilstore_penjualan_action" 
+              sequence="10"/>
+
+</odoo>
+ 

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+
+<!-- fadilstore.barangdatang form view -->
+<record id="fadilstore_barangdatang_view_form_wizzard" model="ir.ui.view">
+    <field name="name">fadilstore.barangdatang.view.form</field>
+    <field name="model">fadilstore.barangdatang</field>
+    <field name="arch" type="xml">
+        <form string="Form kedatangan barang">
+            <group>
+                <field name="barang_id"/>
+                <field name="jumlah"/>       
+            </group>
+                
+                <button string="Input Barang" name="button_barang_datang" type="object" class="btn btn-danger mx-2"/>
+                <button string="Cancel" special="cancel" class="btn btn-warning"/>
+                
+            <footer>
+            
+            
+            </footer>
+        </form>
+    </field>
+</record>
+    
+<!-- fadilstore.barangdatang action window -->
+<record id="fadilstore_barangdatang_action_wizzard" model="ir.actions.act_window">
+    <field name="name">Input Barang</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">fadilstore.barangdatang</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="fadilstore_barangdatang_view_form_wizzard"/>
+    <field name="target">new</field>
+</record>
+
+
+<!-- This Menu Item must have a parent and an action -->
+<menuitem id="fadilstore_barangdatang_menu_action_wizzard" name="" parent="fadilstore_menu_root" action="fadilstore_barangdatang_action_wizzard" sequence="48"/>
+</odoo>

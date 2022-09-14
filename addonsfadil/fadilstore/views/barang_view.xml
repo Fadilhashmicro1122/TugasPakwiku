@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- fadilstore.barang tree view -->
+    <record id="mfadilstore_barang_view_tree" model="ir.ui.view">
+        <field name="name">fadilstore.barang.view.tree</field>
+        <field name="model">fadilstore.barang</field>
+        <field name="arch" type="xml">
+            <tree>
+               <field name="name"/>
+               <field name="harga_beli"/>
+               <field name="harga_jual"/>
+               <field name="stok"/>
+               <field name="kelompokbarang_id"/> 
+               <field name="suplier_id"/> 
+            </tree>
+        </field>
+    </record>
+
+    <!-- fadilstore.barang form view -->
+    <record id="fadilstore_barang_view_form" model="ir.ui.view">
+        <field name="name">fadilstore.barang.view.form</field>
+        <field name="model">fadilstore.barang</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button string="Input Barang" name="%(fadilstore.fadilstore_barangdatang_action_wizzard)d" type="action" class="btn btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="harga_beli"/>
+                        <field name="harga_jual"/>
+                        <field name="stok"/>  
+                    </group>
+
+                    <group name="" string="Kelompok Barang">
+                        <field name="kelompokbarang_id"/>  
+                    </group>
+                    <group name="suplier" string="Suplier">
+                        <field name="suplier_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- fadilstore.barang action window -->
+    <record id="fadilstore_barang_action" model="ir.actions.act_window">
+        <field name="name">Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fadilstore.barang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fadilstore_barang_menu_act"
+              name="Daftar Barang"
+              parent="fadilstore_barang_menu_categ"
+              action="fadilstore_barang_action"
+              sequence="20"/>
+
+</odoo>
